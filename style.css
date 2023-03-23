@@ -1,0 +1,156 @@
+* {
+  padding: 0%;
+  margin: 0;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  user-select: none;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  background-image: url(https://wallpaperaccess.com/full/5927911.gif);
+  background-repeat: round;
+  background-size: cover;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.clock {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+  backdrop-filter: blur(4px);
+  position: relative;
+}
+.numbers {
+  width: inherit;
+  height: inherit;
+  position: relative;
+}
+.numbers > div {
+  position: absolute;
+  color: white;
+  font-size: 2.5rem;
+}
+.twelve {
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.three {
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.six {
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.nine {
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.arrows {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arrows::before {
+  content: "";
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0.2rem 0.2rem 0.5rem #777;
+}
+.arrows > div {
+  width: 0.7rem;
+  height: 12rem;
+  background-color: #fff0f5;
+  position: absolute;
+  bottom: 50%;
+  box-shadow: 0.2rem 0.2rem 0.5rem #777;
+  border-radius: 100% 100% 0 0;
+  transform-origin: bottom center;
+  z-index: -1;
+}
+.arrows .hour {
+  height: 10rem;
+  transform: rotate(90deg);
+}
+.arrows > .sec {
+  background-color: rgb(255, 0, 221);
+  transform: rotate(270deg);
+}
+.clockDigit {
+  width: 30rem;
+  height: 30rem;
+  margin-left: 1rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+li {
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem;
+  padding: 10px;
+  font-size: 3rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(4px);
+  text-shadow: 0px 0px 5px white, 0px 0px 10px white,
+    0px 0px 15px rgb(253, 0, 236), 0px 0px 20px rgb(253, 0, 236),
+    0px 0px 25px white;
+  color: white;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  color: rgb(217, 0, 255);
+  font-size: 4rem;
+}
+@media only screen and (max-width: 930px) {
+  .container {
+    height: auto;
+    flex-direction: column;
+    padding: 100px 0px;
+  }
+  .clockDigit{
+    margin: 20px 0px 0px 0px;
+  }
+}
+@media only screen and (max-width: 500px){
+  .clock,
+  .clockDigit{
+    width: 100%;
+  }
+  .arrows > div{
+    height: 140px;
+  }
+  .arrows .hour{
+    height: 120px;
+  }
+  .arrows .sec{
+    height: 140px;
+  }
+}
